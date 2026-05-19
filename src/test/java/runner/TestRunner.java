@@ -8,7 +8,8 @@ import io.cucumber.testng.CucumberOptions;
         glue = "stepDefinitions",
         plugin = {
                 "pretty",
-                "html:target/cucumber-report.html"
+                "html:target/cucumber-report.html",
+                "rerun:target/failed_scenarios.txt"
         },
         monochrome = true
 )

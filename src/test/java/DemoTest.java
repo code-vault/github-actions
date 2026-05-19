@@ -1,6 +1,7 @@
 import io.restassured.response.Response;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -32,8 +33,8 @@ public class DemoTest {
         response.then()
                 .body("data.id", hasItem(6))
                 .body("data.find { it.id == '6'  }.employee_salary", equalTo("372000"));
-//        List<String> price = response.jsonPath().getList("data").get();
-//        System.out.println(price);
+        String price = response.jsonPath().getString("data[5].employee_salary");
+        System.out.println(price);
     }
 
     @Test
@@ -46,6 +47,7 @@ public class DemoTest {
             throw new RuntimeException(e);
         }
         driver.quit();
+        Assert.fail();
     }
 
 

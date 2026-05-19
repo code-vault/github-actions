@@ -3,13 +3,10 @@
 <suite name="AutomationSuite"
        parallel="tests"
        thread-count="4">
-    <listeners>
-        <listener class-name="listeners.AnnotationTransformer"/>
-    </listeners>
 
-    <test name="Selenium Tests">
+    <test name="Cucumber Tests">
         <classes>
-            <class name="DemoTest"/>
+            <class name="runner.FailedRunner"/>
         </classes>
     </test>
 

@@ -52,6 +52,6 @@ public class StepDefs {
     @Then("User should see homepage")
     public void userShouldSeeHomepage() {
         String pageTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("app_logo"))).getText();
-        Assert.assertEquals(pageTitle, "Swag Labs");
+        Assert.assertEquals(pageTitle, "Swag Lab");
     }
 }
